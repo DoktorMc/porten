@@ -1,8 +1,34 @@
 // fonts
 @font-face {
-  font-family: 'Helvetica';
-  src: url('../fonts/Helvetica-Regular.woff2') format('woff2'),
-      url('../fonts/Helvetica-Regular.woff') format('woff');
+  font-family: 'PT Sans';
+  src: url('../fonts/PTSans-Regular.woff2') format('woff2'),
+      url('../fonts/PTSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Post No Bills Jaffna';
+  src: url('../fonts/PostNoBillsJaffna-Regular.woff2') format('woff2'),
+      url('../fonts/PostNoBillsJaffna-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Post No Bills Jaffna B';
+  src: url('../fonts/PostNoBillsJaffna-Bold.woff2') format('woff2'),
+      url('../fonts/PostNoBillsJaffna-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
+      url('../fonts/PlayfairDisplay-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
