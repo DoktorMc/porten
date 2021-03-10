@@ -1,0 +1,20 @@
+{
+  "name": "porten",
+  "version": "1.0.0",
+  "description": "porten clock",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp styles && gulp scripts && gulp watch"
+  },
+  "author": "Vito",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "browserify": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-clean-css": "*",
+    "gulp-sass": "*",
+    "vinyl-source-stream": "*"
+  }
+}

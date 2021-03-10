@@ -1,0 +1,22 @@
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+_obj
+_test
+
+# Directory-based project format:
+.idea/
+.idea/workspace.xml
+**/.idea/workspace.xml
+
+# mac hidden files
+.DS_Store
+
+node_modules
+.tmp
+build
+
+*.psd
