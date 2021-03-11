@@ -9,6 +9,7 @@
   "author": "Vito",
   "license": "ISC",
   "devDependencies": {
+    "bootstrap": "^5.0.0-beta2",
     "browser-sync": "^2.26.14",
     "browserify": "*",
     "gulp": "*",
@@ -16,5 +17,6 @@
     "gulp-clean-css": "*",
     "gulp-sass": "*",
     "vinyl-source-stream": "*"
-  }
+  },
+  "dependencies": {}
 }

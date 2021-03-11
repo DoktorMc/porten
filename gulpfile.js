@@ -1,10 +1,11 @@
 let gulp = require("gulp");
 let sass = require("gulp-sass");
 let autoprefixer = require("gulp-autoprefixer");
+// let bootstrap = require('bootstrap');
 let browserSync = require("browser-sync").create();
 let browserify = require("browserify");
 let cleanCss = require("gulp-clean-css");
-var sourse = require("vinyl-source-stream");
+let sourse = require("vinyl-source-stream");
 
 let config = {
   server: {
