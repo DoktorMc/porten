@@ -4,6 +4,8 @@ let autoprefixer = require("gulp-autoprefixer");
 // let bootstrap = require('bootstrap');
 let browserSync = require("browser-sync").create();
 let browserify = require("browserify");
+let uglify = require("gulp-uglify-es").default;
+let concat = require('gulp-concat');
 let cleanCss = require("gulp-clean-css");
 let sourse = require("vinyl-source-stream");
 
@@ -22,7 +24,7 @@ let config = {
     },
     src: {
       styles: "./src/scss/index.scss",
-      scripts: "./src/js/index.js",
+      scripts: "./src/js/**/*.js",
       images: ["!./src/img/vector/sprite/*", "./src/img/**/*.*"],
       fonts: "./src/fonts/*.*",
       html: "./src/*.html",
@@ -58,10 +60,11 @@ function makeStyles() {
 }
 
 async function makeScripts() {
-  browserify(config.path.src.scripts)
-    .bundle()
-    .pipe(sourse("index.js"))
-    .pipe(gulp.dest(config.path.dest.scripts))
+  return gulp
+  .src(config.path.src.scripts)
+  .pipe(uglify())
+  .pipe(concat('index.js'))
+  .pipe(gulp.dest(config.path.dest.scripts))
     .pipe(
       browserSync.reload({
         stream: true,

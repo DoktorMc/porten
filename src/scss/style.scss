@@ -1,9 +1,414 @@
-//header styles
+.card_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  .card_item-img {
+    //
+    background: #191b1c;
+    padding: 53px 22px;
+    box-sizing: border-box;
+  }
+  .card_item-title {
+    display: inline;
+    margin-top: 25px;
+    font-family: $playfairDisplay;
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffff;
+  }
+  .card_item-coast {
+    margin-top: 10px;
+    font-family: $playfairDisplay;
+    font-size: 16px;
+    line-height: 21px;
+    color: #d0d0d0;
+  }
+}
 
-.test {
-  color: #000000;
+//------------------- header styles --------------------------------
+
+.top_nav_parts-text {
+  font-family: $PTSans;
+  font-size: 12px;
+  line-height: 16px;
+  margin-right: 4px;
+  color: #969696;
+  text-transform: none;
+  transition: all 0.3s ease-out;
+
+  @include desktop {
+    margin-right: 13px;
+  }
+  &-link {
+    font-family: $PTSans;
+    font-size: 12px;
+    line-height: 16px;
+    margin-right: 8px;
+    color: #969696;
+    text-transform: none;
+    transition: all 0.3s ease-out;
+    @include desktop {
+      margin-right: 13px;
+    }
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
+
+.login_ico {
+  width: 15px;
+  margin-right: 8px;
+  @include desktop {
+    margin-right: 13px;
+  }
+}
+
+.logo {
   font-family: $postNoBJB;
-  font-size: 64px; 
-  
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 54px;
+}
+
+.nav-link {
+  font-family: $PTSans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
   text-transform: uppercase;
+  color: #969696;
+  &:hover {
+    color: #ffffff;
+    background: #1f1f1f1f;
+  }
+}
+
+.shop {
+  margin-left: 60px;
+  height: 100%;
+  .search_ico {
+    margin-right: 40px;
+  }
+}
+
+//-------------------- END header styles ------------------------------
+// *********************************************************************
+//----------------------- section styles ------------------------------
+
+// section first screen
+.first_screen {
+  background: url("../img/firstscreenB.png") no-repeat;
+  background-size: cover;
+  background-position: top;
+  .first_screen-logo {
+    width: 320px;
+    height: 320px;
+    border: 4px solid #ffffff;
+    box-sizing: border-box;
+    margin-top: 160px;
+    .first_screen-logo-wraper {
+      padding: 93px 66px;
+      text-align: center;
+      .first_screen-logo-title {
+        font-family: $postNoBJB;
+        font-size: 64px;
+        line-height: 70px;
+        color: #ffffff;
+        text-transform: uppercase;
+      }
+      .first_screen-logo-description {
+        font-family: $PTSans;
+        font-size: 22px;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+    }
+  }
+  .first_screen-description {
+    margin: 80px 0 154px;
+    text-align: center;
+
+    .first_screen-description_text {
+      font-family: $PTSans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      padding: 3px;
+      text-transform: uppercase;
+
+      color: #ffffff;
+    }
+  }
+}
+
+// section second screen
+
+.second_screen {
+  .second_screen-season {
+    padding: 93px 80px 53px;
+    background: #000000;
+    box-sizing: border-box;
+    .second_screen-season_title {
+      font-family: $playfairDisplay;
+      font-size: 36px;
+      line-height: 48px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    .second_screen-season_items {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .second_screen-new_colection {
+    background: url("../img/BackManOnChair.png") no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    .second_screen-new_colection-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 50px;
+      @include desktop {
+        margin-bottom: 100px;
+      }
+
+      .second_screen-new_colection-title {
+        font-family: $playfairDisplay;
+        font-size: 36px;
+        line-height: 48px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+      .second_screen-new_colection-button {
+        border: 1px solid #ffffff;
+        padding: 12px 28px;
+        box-sizing: border-box;
+        transition: all 0.5 ease-in;
+        &:hover {
+          color: #ffffff;
+          background: #e9e9e949;
+        }
+      }
+    }
+  }
+}
+
+// section third screen
+
+.third_screen {
+  .third_screen-img {
+    display: none;
+    @include desktop {
+      display: block;
+      background: url("../img/BackManInSuit.png") no-repeat;
+      background-size: cover;
+    }
+  }
+  .third_screen-colection {
+    background: #000000;
+    box-sizing: border-box;
+    padding: 50px 0;
+    @include desktop {
+      padding: 100px 115px;
+    }
+
+    .third_screen-colection-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .third_screen-colection_title {
+        font-family: $playfairDisplay;
+        font-size: 36px;
+        line-height: 48px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+      .third_screen-colection_description {
+        display: inline-block;
+        width: 320px;
+        height: auto;
+        font-family: $PTSans;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: center;
+        color: #ffffff;
+
+        @include desktop {
+          width: 471px;
+        }
+      }
+      .third_screen-colection-button {
+        border: 1px solid #ffffff;
+        padding: 12px 28px;
+        box-sizing: border-box;
+        transition: all 0.5 ease-in;
+        margin-top: 60px;
+        &:hover {
+          color: #ffffff;
+          background: #e9e9e949;
+        }
+      }
+    }
+  }
+}
+
+// section new arrivals
+
+.new_arrivals {
+  background: #000000;
+
+  .new_arrivals-wraper {
+    padding: 60px 0 40px;
+    @include desktop {
+      padding: 120px 0 110px;
+    }
+
+    .new_arrivals-title {
+      font-family: $playfairDisplay;
+      font-size: 36px;
+      line-height: 48px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    .new_arrivals-items {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+// section uor brands
+.uor_brands {
+  background: #0f0f0f;
+
+  padding: 40px 0 20px;
+  @include desktop {
+    padding: 60px 0 80px;
+  }
+
+  .uor_brands-title {
+    font-family: $playfairDisplay;
+    font-size: 36px;
+    line-height: 48px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  .uor_brands-items {
+    width: 100%;
+
+    text-align: center;
+  }
+}
+
+// footer
+
+.porten_footer {
+  padding: 80px 0 60px;
+  background: url("../img/BackManWithGlass.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  .porten_footer-items {
+    color: #ffffff;
+    .porten_footer-about {
+      padding: 40px;
+      .porten_footer-about_title {
+        font-family: $playfairDisplay;
+        font-size: 24px;
+        line-height: 32px;
+        text-transform: uppercase;
+      }
+      .porten_footer-about_description {
+        font-family: $PTSans;
+        font-size: 14px;
+        line-height: 21px;
+        margin-top: 40px;
+      }
+    }
+    .porten_footer-category {
+      padding: 40px;
+      .porten_footer-category_title {
+        font-family: $playfairDisplay;
+        font-size: 24px;
+        line-height: 32px;
+        text-transform: uppercase;
+      }
+      .porten_footer-category_items {
+        margin-top: 40px;
+        .porten_footer-category_item {
+          padding: 10px 20px;
+          background: #0f0f0f;
+          color: #d0d0d0;
+          text-transform: none;
+          margin-bottom: 20px;
+          &:hover {
+            background: #585858;
+          }
+        }
+      }
+    }
+
+    .porten_footer-mailing {
+      padding: 40px;
+      .porten_footer-mailing_title {
+        font-family: $playfairDisplay;
+        font-size: 24px;
+        line-height: 32px;
+        text-transform: uppercase;
+      }
+      .porten_footer-mailing_description {
+        font-family: $PTSans;
+        font-size: 14px;
+        line-height: 21px;
+        margin-top: 40px;
+      }
+      .porten_footer-mailing_form {
+        margin-top: 35px;
+        .mailing_form-input {
+          width: 210px;
+          background: #ffffff66;
+          font-family: $PTSans;
+          font-size: 14px;
+          line-height: 150%;
+          color: #969696;
+          padding: 10px 0 11px 15px;
+          &::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #969696;
+          }
+        }
+        .mailing_form-btn {
+          background: #0f0f0f;
+          border: none;
+          font-family: $PTSans;
+          font-size: 14px;
+          line-height: 150%;
+          /* identical to box height, or 21px */
+          color: #ffffff;
+          padding: 10px 20px;
+          text-transform: uppercase;
+          &:hover {
+            background: #585858;
+          }
+        }
+      }
+    }
+  }
 }

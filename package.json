@@ -15,7 +15,9 @@
     "gulp": "*",
     "gulp-autoprefixer": "*",
     "gulp-clean-css": "*",
+    "gulp-concat": "^2.6.1",
     "gulp-sass": "*",
+    "gulp-uglify-es": "^2.0.0",
     "vinyl-source-stream": "*"
   },
   "dependencies": {}
