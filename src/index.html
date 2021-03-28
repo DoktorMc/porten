@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css" />
+    <link
+      rel="stylesheet"
+      href="owlcarousel/assets/owl.theme.default.min.css"
+    />
     <title>Porten</title>
   </head>
   <body>
@@ -54,47 +59,43 @@
         </ul>
       </div>
     </nav>
-    <nav
-      class="navbar navbar-expand-xl navbar-dark"
-      style="background-color: #0f0f0f"
-    >
+    <nav class="main_navbar">
       <div class="container-lg">
-        <a class="navbar-brand logo">porten</a>
+        <div class="main_navbar-wraper">
+          <a class="navbar-brand logo">porten</a>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#my-nav"
-          aria-controls="my-nav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          <div class="main_navbar-menu">
+            <ul class="main_navbar-menu_items">
+              <li class="navbar-menu-item">
+                <a class="navbar-menu-link" href="#">Понравилось</a>
+              </li>
+              <li class="navbar-menu-item">
+                <a class="navbar-menu-link" href="#">личный кабинет</a>
+              </li>
+              <li class="navbar-menu-item">
+                <a class="navbar-menu-link" href="#">Настройки</a>
+              </li>
+            </ul>
+            <ul class="main_navbar-menu_shop">
+              <li class="menu_shop-cart">
+                <a href="#"><img src="./img/cart.svg" width="22" alt="" /></a>
+              </li>
+              <li class="menu_shop-search">
+                <img
+                  src="./img/search.svg"
+                  class="search_ico"
+                  width="22"
+                  alt=""
+                />
+              </li>
+            </ul>
+          </div>
 
-        <div id="my-nav" class="collapse navbar-collapse justify-content-end">
-          <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Понравилось</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">личный кабинет</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Настройки</a>
-            </li>
-          </ul>
-          <ul class="nav shop">
-            <li class="nav-item search_ico">
-              <a href="#"><img src="./img/cart.svg" width="22" alt="" /></a>
-            </li>
-            <li class="nav-item">
-              <img src="./img/search.svg" width="22" alt="" />
-            </li>
-          </ul>
+          <div class="section_menu-btn">
+            <span class="menu-btn">
+              <span></span>
+            </span>
+          </div>
         </div>
       </div>
     </nav>
@@ -113,7 +114,7 @@
               <span class="first_screen-logo-description">санкт-петербург</span>
             </div>
           </div>
-          <div class="first_screen-description col-8">
+          <div class="first_screen-description">
             <span class="first_screen-description_text"
               >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
               interdum purus, est tortor pulvinar ut in. Fringilla a diam enim
@@ -130,33 +131,31 @@
 
     <section class="second_screen">
       <div class="container-fluid">
-        <div class="row d-flex flex-sm-column flex-lg-row">
+        <div class="row d-flex flex-sm-column flex-lg-row second_screen-wraper">
           <div
             class="col second_screen-season d-flex flex-column align-items-center"
           >
             <span class="second_screen-season_title">СЕЗОН 2020/21</span>
-            <div class="border-top" style="width: 120px; margin: 50px 0"></div>
-            <div
-              class="row row-cols-1 row-cols-sm-3 row-cols-lg-3 second_screen-season_items"
-            >
-              <div class="col card_item">
-                <div class="card_item-img">
-                  <img src="img/Clock.png" class="img-fluid" alt="" />
-                </div>
+            <div class="border-top"></div>
 
-                <span class="card_item-title">Louis XVI ATHOS</span>
-                <span class="card_item-coast">165 000 руб.</span>
-              </div>
-              <div class="col card_item">
+            <div class="season-carousel">
+              <div class="card_item">
                 <div class="card_item-img">
-                  <img src="img/Clock.png" class="img-fluid" alt="" />
+                  <img src="img/Clock.png" class="" alt="" />
                 </div>
                 <span class="card_item-title">Louis XVI ATHOS</span>
                 <span class="card_item-coast">165 000 руб.</span>
               </div>
-              <div class="col card_item">
+              <div class="card_item">
                 <div class="card_item-img">
-                  <img src="img/Clock.png" class="img-fluid" alt="" />
+                  <img src="img/Clock.png" class="" alt="" />
+                </div>
+                <span class="card_item-title">Louis XVI ATHOS</span>
+                <span class="card_item-coast">165 000 руб.</span>
+              </div>
+              <div class="card_item">
+                <div class="card_item-img">
+                  <img src="img/Clock.png" class="" alt="" />
                 </div>
                 <span class="card_item-title">Louis XVI ATHOS</span>
                 <span class="card_item-coast">165 000 руб.</span>
@@ -180,15 +179,12 @@
 
     <section class="third_screen">
       <div class="container-fluid">
-        <div class="row">
+        <div class="row d-flex flex-column-reverse flex-lg-row">
           <div class="col third_screen-img"></div>
           <div class="col third_screen-colection">
             <div class="third_screen-colection-content">
               <span class="third_screen-colection_title">коллекция 2018</span>
-              <div
-                class="border-top"
-                style="width: 120px; margin: 40px 0"
-              ></div>
+              <div class="border-top"></div>
               <span class="third_screen-colection_description">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non
                 rutrum ornare ut mattis habitant dui arcu. Sagittis amet nunc ut
@@ -216,68 +212,64 @@
       <div class="container-lg">
         <div class="new_arrivals-wraper d-flex flex-column align-items-center">
           <span class="new_arrivals-title">новые поступления</span>
-          <div
-            class="border-top"
-            style="width: 120px; margin: 40px 0 80px"
-          ></div>
-          <div
-            class="row row-cols-1 row-cols-sm-2 row-cols-md-4 new_arrivals-items"
-          >
-            <div class="col card_item">
+          <div class="border-top"></div>
+
+          <div class="arrivals-carousel">
+            <div class="arrivals-card_item">
               <div class="card_item-img">
                 <img src="img/Clock.png" class="img-fluid" alt="" />
               </div>
               <span class="card_item-title">Louis XVI ATHOS</span>
-              <span class="card_item-coast">165 000 руб.</span>
+              <span class="card_item-coast">175 000 руб.</span>
             </div>
-            <div class="col card_item">
+            <div class="arrivals-card_item">
               <div class="card_item-img">
                 <img src="img/Clock.png" class="img-fluid" alt="" />
               </div>
               <span class="card_item-title">Louis XVI ATHOS</span>
-              <span class="card_item-coast">165 000 руб.</span>
+              <span class="card_item-coast">185 000 руб.</span>
             </div>
-            <div class="col card_item">
+            <div class="arrivals-card_item">
               <div class="card_item-img">
                 <img src="img/Clock.png" class="img-fluid" alt="" />
               </div>
               <span class="card_item-title">Louis XVI ATHOS</span>
-              <span class="card_item-coast">165 000 руб.</span>
+              <span class="card_item-coast">195 000 руб.</span>
             </div>
-            <div class="col card_item">
+            <div class="arrivals-card_item">
               <div class="card_item-img">
                 <img src="img/Clock.png" class="img-fluid" alt="" />
               </div>
               <span class="card_item-title">Louis XVI ATHOS</span>
-              <span class="card_item-coast">165 000 руб.</span>
+              <span class="card_item-coast">145 000 руб.</span>
             </div>
-            <div class="col card_item">
+            <div class="arrivals-card_item">
               <div class="card_item-img">
                 <img src="img/Clock.png" class="img-fluid" alt="" />
               </div>
               <span class="card_item-title">Louis XVI ATHOS</span>
-              <span class="card_item-coast">165 000 руб.</span>
+              <span class="card_item-coast">125 000 руб.</span>
             </div>
-            <div class="col card_item">
+            <div class="arrivals-card_item">
               <div class="card_item-img">
                 <img src="img/Clock.png" class="img-fluid" alt="" />
               </div>
               <span class="card_item-title">Louis XVI ATHOS</span>
-              <span class="card_item-coast">165 000 руб.</span>
+              <span class="card_item-coast">115 000 руб.</span>
             </div>
-            <div class="col card_item">
+            <div class="arrivals-card_item">
               <div class="card_item-img">
                 <img src="img/Clock.png" class="img-fluid" alt="" />
               </div>
               <span class="card_item-title">Louis XVI ATHOS</span>
-              <span class="card_item-coast">165 000 руб.</span>
+              <span class="card_item-coast">135 000 руб.</span>
             </div>
-            <div class="col card_item">
+            <div class="arrivals-card_item">
               <div class="card_item-img">
                 <img src="img/Clock.png" class="img-fluid" alt="" />
               </div>
               <span class="card_item-title">Louis XVI ATHOS</span>
-              <span class="card_item-coast">165 000 руб.</span>
+              <span class="card_item-coast">125 000 руб.</span>
             </div>
           </div>
         </div>
@@ -292,21 +284,19 @@
           <span class="uor_brands-title">наши бренды</span>
           <div
             class="border-top"
-            style="width: 120px; margin: 40px 0 40px"
           ></div>
-          <div
-            class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-xl-4 uor_brands-items"
-          >
-            <div class="col">
+
+          <div class="brands_carousel">
+            <div class="brands-item">
               <img src="img/Brands.png" alt="" />
             </div>
-            <div class="col">
+            <div class="brands-item">
               <img src="img/Brands.png" alt="" />
             </div>
-            <div class="col">
+            <div class="brands-item">
               <img src="img/Brands.png" alt="" />
             </div>
-            <div class="col">
+            <div class="brands-item">
               <img src="img/Brands.png" alt="" />
             </div>
           </div>
@@ -319,10 +309,10 @@
     <footer class="porten_footer">
       <div class="container-lg">
         <div
-          class="row row-cols-xs-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 porten_footer-items"
+          class="row d-flex align-content-sm-center flex-xs-column flex-sm-column flex-md-row porten_footer-items"
         >
           <div
-            class="col-xs-1 col-sm-3 col-lg-4 d-flex flex-column porten_footer-about"
+            class="col-12 col-sm-10 col-md-6 col-lg-6 col-xl-4 d-flex flex-column porten_footer-about"
           >
             <span class="porten_footer-about_title">О Магазине</span>
             <span class="porten_footer-about_description"
@@ -335,7 +325,7 @@
             </span>
           </div>
           <div
-            class="col-xs-1 col-sm-3 col-lg-4 d-flex flex-column porten_footer-category"
+            class="col-12 col-sm-10 col-md-6 col-lg-6 col-xl-4 d-flex flex-column porten_footer-category"
           >
             <span class="porten_footer-category_title">Категории</span>
             <div
@@ -351,7 +341,7 @@
             </div>
           </div>
           <div
-            class="col-xs-1 col-sm-3 col-lg-4 d-flex flex-column porten_footer-mailing"
+            class="col-12 col-sm-10 col-md-6 col-lg-6 col-xl-4 d-flex flex-column porten_footer-mailing"
           >
             <span class="porten_footer-mailing_title">Рассылка</span>
             <span class="porten_footer-mailing_description"
@@ -374,11 +364,108 @@
       </div>
     </footer>
 
+    <!------------------------ post footer -------------------------->
+
+    <section class="the_rights">
+      <div class="container-lg">
+        <div class="the_rights-wraper">
+          <div class="right">© 2020 Все права защищены</div>
+          <div class="made">Сделано Figma.info</div>
+        </div>
+      </div>
+    </section>
+
     <script src="js/index.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(window)
+          .on("resize", function () {
+            if ($(window).width() <= 1024) {
+              $(".season-carousel").addClass("owl-carousel");
+              $(".brands_carousel").addClass("owl-carousel");
+              $(".arrivals-carousel").addClass("owl-carousel");
+
+              $(".season-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                responsive: {
+                  320: {
+                    items: 1,
+                    nav: false,
+                    dots: true,
+                  },
+                  768: {
+                    items: 3,
+                    nav: false,
+                    dots: false,
+                  },
+                  1024: {
+                    items: 3,
+                    nav: false,
+                    dots: false,
+                    loop: false,
+                  },
+                },
+              });
+
+              $(".brands_carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                responsive: {
+                  320: {
+                    items: 1,
+                    dots: true,
+                  },
+                  768: {
+                    items: 2,
+                    nav: false,
+                    dots: true,
+                  },
+                  1024: {
+                    items: 4,
+                    nav: false,
+                    dots: true,
+                    loop: false,
+                  },
+                },
+              });
+
+              $(".arrivals-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                responsive: {
+                  320: {
+                    items: 1,
+                    dots: true,
+                  },
+                  768: {
+                    items: 2,
+                    nav: false,
+                    dots: true,
+                  },
+                  1024: {
+                    items: 4,
+                    nav: false,
+                    dots: false,
+                    loop: false,
+                  },
+                },
+              });
+            } else {
+              $(".season-carousel").removeClass("owl-carousel");
+              $(".brands_carousel").removeClass("owl-carousel");
+              $(".arrivals-carousel").removeClass("owl-carousel");
+            }
+          })
+          .trigger("resize");
+      });
+    </script>
   </body>
 </html>

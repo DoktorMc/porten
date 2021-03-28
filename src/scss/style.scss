@@ -1,14 +1,27 @@
-.card_item {
+.border-top {
+  width: 120px;
+  margin: 20px 0 30px;
+  @include desktop {
+    margin: 40px 0 80px;
+  }
+}
+.card_item,
+.arrivals-card_item {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 40px;
+
   .card_item-img {
-    //
     background: #191b1c;
-    padding: 53px 22px;
+    padding: 20px 10px;
     box-sizing: border-box;
+    @include desktop {
+      padding: 53px 22px;
+    }
+    img {
+      display: block;
+      width: 100%;
+    }
   }
   .card_item-title {
     display: inline;
@@ -66,33 +79,107 @@
   }
 }
 
-.logo {
-  font-family: $postNoBJB;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 54px;
-}
+.main_navbar {
+  background: #0f0f0f;
+  .main_navbar-wraper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-.nav-link {
-  font-family: $PTSans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
-  text-transform: uppercase;
-  color: #969696;
-  &:hover {
-    color: #ffffff;
-    background: #1f1f1f1f;
-  }
-}
+    .logo {
+      font-family: $postNoBJB;
+      font-size: 36px;
+      line-height: 54px;
+      color: #ffffff;
+    }
 
-.shop {
-  margin-left: 60px;
-  height: 100%;
-  .search_ico {
-    margin-right: 40px;
+    .main_navbar-menu {
+      position: fixed;
+      display: flex;
+      top: 0;
+      right: -200px;
+      opacity: 0;
+      height: 100%;
+      width: 0;
+      flex-direction: column;
+      background: #000000;
+      z-index: 99;
+      text-align: right;
+      transition: all 0.3s ease-out;
+      &.active {
+        opacity: 0.85;
+        right: 0;
+        width: 100%;
+        transition: all 0.3s ease-out;
+      }
+      @include tablet {
+        position: relative;
+        opacity: 1;
+        flex-direction: row;
+        align-items: center;
+        background: transparent;
+        height: auto;
+        width: auto;
+        top: 0;
+        right: 0;
+      }
+      .main_navbar-menu_items {
+        margin-top: 150px;
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+
+        @include tablet {
+          flex-direction: row;
+          margin: 0;
+        }
+        .navbar-menu-item {
+          padding: 25px;
+          transition: all 0.2s ease-in;
+          @include tablet {
+            padding: 31px 20px;
+          }
+          .navbar-menu-link {
+            font-family: $PTSans;
+            font-size: 18px;
+            text-transform: uppercase;
+            color: #969696;
+            @include tablet {
+              font-size: 14px;
+              line-height: 18px;
+            }
+          }
+          &:hover {
+            .navbar-menu-link {
+              color: #ffffff;
+            }
+            background: #1f1f1f;
+          }
+        }
+      }
+
+      .main_navbar-menu_shop {
+        display: flex;
+        padding: 5px 25px;
+
+        flex-direction: column;
+        @include tablet {
+          margin-left: 60px;
+          flex-direction: row;
+        }
+        .menu_shop-cart {
+        }
+
+        .menu_shop-search {
+          margin-top: 20px;
+          @include tablet {
+            margin-left: 40px;
+            margin-top: 0;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -106,14 +193,18 @@
   background-size: cover;
   background-position: top;
   .first_screen-logo {
-    width: 320px;
-    height: 320px;
     border: 4px solid #ffffff;
     box-sizing: border-box;
     margin-top: 160px;
+    @include desktop {
+      margin-top: 160px;
+    }
     .first_screen-logo-wraper {
-      padding: 93px 66px;
+      padding: 69px 33px;
       text-align: center;
+      @include desktop {
+        padding: 93px 66px;
+      }
       .first_screen-logo-title {
         font-family: $postNoBJB;
         font-size: 64px;
@@ -133,7 +224,7 @@
   .first_screen-description {
     margin: 80px 0 154px;
     text-align: center;
-
+    max-width: 720px;
     .first_screen-description_text {
       font-family: $PTSans;
       font-style: normal;
@@ -151,10 +242,20 @@
 // section second screen
 
 .second_screen {
+ 
+  background: #000000;
   .second_screen-season {
-    padding: 93px 80px 53px;
-    background: #000000;
-    box-sizing: border-box;
+    padding: 50px 0 30px; 
+
+    @include tablet {
+      padding: 60px 50px 40px;
+    }
+    @include laptop {
+      padding: 50px 30px 30px;
+    }
+    @include desktop {
+      padding: 90px 80px 50px;
+    }
     .second_screen-season_title {
       font-family: $playfairDisplay;
       font-size: 36px;
@@ -163,10 +264,47 @@
       text-transform: uppercase;
       color: #ffffff;
     }
-    .second_screen-season_items {
+    .season-carousel {
+      width: 100%;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      padding: 10px 0;
+      box-sizing: border-box;
+      @include laptop {
+        flex-direction: row;
+      }
+      .card_item {
+        margin: 0 25px;
+        margin-bottom: 20px;
+
+        @include tablet {
+          margin: 0 25px;
+          min-width: auto;
+        }
+        .card_item-img {
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+      .owl-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        .owl-dot {
+          width: 10px;
+          height: 10px;
+          border: 1px solid #ffffff;
+          border-radius: 5px;
+          margin: 0 3px;
+          background: #ffffff;
+          transition: all 0.2s ease-in;
+          &.active {
+            background: #a0a0a0;
+          }
+        }
+      }
     }
   }
   .second_screen-new_colection {
@@ -175,6 +313,10 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    min-height: 400px;
+    @include tablet {
+      min-height: 400px;
+    }
     .second_screen-new_colection-content {
       display: flex;
       flex-direction: column;
@@ -210,17 +352,24 @@
 
 .third_screen {
   .third_screen-img {
-    display: none;
-    @include desktop {
-      display: block;
-      background: url("../img/BackManInSuit.png") no-repeat;
-      background-size: cover;
+    display: block;
+    width: 100%;
+    min-height: 300px;
+    background: url("../img/BackManInSuit.png") no-repeat;
+    background-size: cover;
+    background-position: top;
+    @include tablet {
+      min-height: 400px;
     }
   }
   .third_screen-colection {
     background: #000000;
     box-sizing: border-box;
-    padding: 50px 0;
+    padding: 50px $mobile-pads;
+    @include tablet {
+      padding: 50px 85px;
+    }
+
     @include desktop {
       padding: 100px 115px;
     }
@@ -239,7 +388,7 @@
       }
       .third_screen-colection_description {
         display: inline-block;
-        width: 320px;
+        width: 100%;
         height: auto;
         font-family: $PTSans;
         font-size: 14px;
@@ -285,10 +434,42 @@
       text-transform: uppercase;
       color: #ffffff;
     }
-    .new_arrivals-items {
+
+    .arrivals-carousel {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      @include tablet {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .arrivals-card_item {
+        margin: 0 25px;
+        margin-bottom: 20px;
+        @include tablet {
+          display: flex;
+        }
+        @include desktop {
+          margin-bottom: 40px;
+        }
+      }
+      .owl-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        .owl-dot {
+          width: 10px;
+          height: 10px;
+          border: 1px solid #ffffff;
+          border-radius: 5px;
+          margin: 0 3px;
+          background: #ffffff;
+          transition: all 0.2s ease-in;
+          &.active {
+            background: #a0a0a0;
+          }
+        }
+      }
     }
   }
 }
@@ -296,8 +477,7 @@
 // section uor brands
 .uor_brands {
   background: #0f0f0f;
-
-  padding: 40px 0 20px;
+  padding: 50px 0 30px;
   @include desktop {
     padding: 60px 0 80px;
   }
@@ -310,25 +490,55 @@
     text-transform: uppercase;
     color: #ffffff;
   }
-  .uor_brands-items {
-    width: 100%;
 
-    text-align: center;
+  .brands_carousel {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    .brands-item {
+      padding: 0 10px;
+      text-align: center;
+    }
+    .owl-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      .owl-dot {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #ffffff;
+        border-radius: 5px;
+        margin: 0 3px;
+        background: #ffffff;
+        transition: all 0.2s ease-in;
+        &.active {
+          background: #a0a0a0;
+        }
+      }
+    }
   }
 }
 
 // footer
 
 .porten_footer {
-  padding: 80px 0 60px;
+  padding: 40px 0;
   background: url("../img/BackManWithGlass.png") no-repeat;
   background-size: cover;
   background-position: center;
-
+  @include tablet {
+    padding: 80px 0 60px;
+  }
   .porten_footer-items {
     color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+
     .porten_footer-about {
-      padding: 40px;
+      padding: 20px;
+      @include tablet {
+        padding: 40px;
+      }
       .porten_footer-about_title {
         font-family: $playfairDisplay;
         font-size: 24px;
@@ -343,7 +553,10 @@
       }
     }
     .porten_footer-category {
-      padding: 40px;
+      padding: 20px;
+      @include tablet {
+        padding: 40px;
+      }
       .porten_footer-category_title {
         font-family: $playfairDisplay;
         font-size: 24px;
@@ -353,11 +566,15 @@
       .porten_footer-category_items {
         margin-top: 40px;
         .porten_footer-category_item {
-          padding: 10px 20px;
+          padding: 5px 10px;
           background: #0f0f0f;
           color: #d0d0d0;
           text-transform: none;
           margin-bottom: 20px;
+
+          @include tablet {
+            padding: 10px 20px;
+          }
           &:hover {
             background: #585858;
           }
@@ -366,7 +583,10 @@
     }
 
     .porten_footer-mailing {
-      padding: 40px;
+      padding: 20px;
+      @include tablet {
+        padding: 40px;
+      }
       .porten_footer-mailing_title {
         font-family: $playfairDisplay;
         font-size: 24px;
@@ -381,19 +601,29 @@
       }
       .porten_footer-mailing_form {
         margin-top: 35px;
+        flex-direction: column;
+
+        @include desktop {
+          flex-direction: row;
+        }
         .mailing_form-input {
-          width: 210px;
+          width: 100%;
           background: #ffffff66;
           font-family: $PTSans;
           font-size: 14px;
           line-height: 150%;
           color: #969696;
           padding: 10px 0 11px 15px;
+
           &::placeholder {
             /* Chrome, Firefox, Opera, Safari 10.1+ */
             color: #969696;
           }
+          @include desktop {
+            width: 210px;
+          }
         }
+
         .mailing_form-btn {
           background: #0f0f0f;
           border: none;
@@ -402,13 +632,44 @@
           line-height: 150%;
           /* identical to box height, or 21px */
           color: #ffffff;
-          padding: 10px 20px;
+          padding: 5px 10px;
           text-transform: uppercase;
+          margin-top: 10px;
+          @include desktop {
+            margin-top: 0;
+            padding: 10px 20px;
+          }
           &:hover {
             background: #585858;
           }
         }
       }
+    }
+  }
+}
+
+// POST FOOTER
+
+.the_rights {
+  background: #0f0f0f;
+  .the_rights-wraper {
+    padding: 17px 0;
+    display: flex;
+    justify-content: space-between;
+    .right {
+      font-family: $PTSans;
+      font-size: 12px;
+      line-height: 16px;
+      color: #d0d0d0;
+    }
+    .made {
+      font-family: $PTSans;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 16px;
+      text-decoration-line: underline;
+      color: #d0d0d0;
     }
   }
 }

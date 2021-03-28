@@ -1,0 +1,53 @@
+.section_menu-btn {
+  @include tablet {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    // background: $green;
+    border-radius: 50%;
+    z-index: 999;
+    span {
+      position: absolute;
+      top: 19px;
+      left: 10px;
+      width: 25px;
+      height: 2px;
+      background: #ffffff;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 2px;
+        background: #ffffff;
+        transition: 0.2s;
+      }
+
+      &:before {
+        transform: translateY(-5px);
+      }
+
+      &:after {
+        transform: translateY(5px);
+      }
+    }
+
+    &.active {
+      span {
+        height: 0;
+        &:before {
+          transform: rotate(45deg);
+        }
+        &:after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
